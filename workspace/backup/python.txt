@@ -1,0 +1,27 @@
+python - virtual 
+
+## Instalation
+apt install python3.8-venv
+pip install virtualenv
+
+## Create virtual env 
+python3 -m venv .venv
+
+## Ative
+source .venv/bin/activate
+
+## listar pacotes
+pip freeze
+
+## File txt pacotes
+pip freeze > requeriments.txt
+
+## Exit
+deactivate
+
+## retorm packge of the file requeriments
+pip install -r requeriments.txt
+
+
+
+OBS: icecream (log) && autopep8 (Formatação de código)

@@ -1,0 +1,50 @@
+Mostra Nome, Container, Percentual de uso de CPU e Uso de Memória ordenados do maior para o menor por  
+
+O número é a coluna que será feito o sort, -r coloca em ordem decrescente de uso.
+docker stats --no-stream --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" | sort -k 4 -h -r
+docker stats --no-stream --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" | sort -k 3 -h -r
+
+
+
+Mostra IP, ID, Nome de um container ( funciona apenas no rancher.valebroker.com.br)por  
+
+docker ps --format 'table {{.ID}}\t{{.Label "io.rancher.container.ip"}}\t{{.Names}}'
+
+Remove os container e imagens que não estão sendo utilizadas por  
+
+docker rm $(docker ps -qa) && docker rmi $(docker images -a)
+
+Use docker stats para listar o uso de CPU e memória de todos os containers.
+ou docker stats + id_do_container para listar um container específico.
+
+
+
+Comando para apagar imagens docker:
+
+ 
+
+docker image rm $(docker image ls -a -q)
+
+Comando para apagar os containers parados:
+
+docker container rm $(docker container ls -a -q)
+
+Comando para apagar as imagens com childrens:
+
+docker rmi $(docker images | awk '{print $1 ":" $2}')
+
+Comando para exibir as configurações do container, tais como: IP, Host, Imagem, nome, status.
+
+docker inspect+ id_do_container
+
+docker inspect+ nome_do_container
+
+
+
+Comando Docker para acessar o shell do primeiro container id encontrado pelo grep
+
+docker exec -it $(docker ps | grep multibroker | awk '{ print $1 }') sh
+# ou
+docker exec -it $(docker ps | grep multibroker | awk '{ print $1 }') ash
+# ou
+docker exec -it $(docker ps | grep multibroker | awk '{ print $1 }') bash

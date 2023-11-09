@@ -1,0 +1,2 @@
+ cut -ds -f1 = corta tudo do "s" pra traz
+ cut -ds -f2 = corta tudo do "s" pra frente

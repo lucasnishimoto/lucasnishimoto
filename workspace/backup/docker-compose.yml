@@ -1,0 +1,31 @@
+version: '2'
+
+networks:
+  net:
+    external:
+      name: dev-network
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - net
+  influxdb:
+    image: influxdb:1.8
+    container_name: influxdb
+    restart: always
+    volumes: 
+    - /etc/influxdb/scripts:/docker-entrypoint-initdb.d 
+    ports:
+      - 8086:8086
+    networks:
+      - net
+    environment:
+      - INFLUXDB_DB=teste
+      - INFLUXDB_USER=teste
+      - INFLUXDB_ADMIN_ENABLED=true
+      - INFLUXDB_ADMIN_USER=teste
+      - INFLUXDB_ADMIN_PASSWORD=teste

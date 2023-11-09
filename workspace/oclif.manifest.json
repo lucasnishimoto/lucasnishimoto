@@ -1,0 +1,74 @@
+{
+  "version": "0.0.0",
+  "commands": {
+    "hello": {
+      "id": "hello",
+      "description": "Say hello",
+      "strict": true,
+      "pluginName": "atlas",
+      "pluginAlias": "atlas",
+      "pluginType": "core",
+      "aliases": [],
+      "examples": [
+        "$ oex hello friend --from oclif\nhello friend from oclif! (./src/commands/hello/index.ts)\n"
+      ],
+      "flags": {
+        "from": {
+          "name": "from",
+          "type": "option",
+          "char": "f",
+          "description": "Who is saying hello",
+          "required": true,
+          "multiple": false
+        }
+      },
+      "args": {
+        "person": {
+          "name": "person",
+          "description": "Person to say hello to",
+          "required": true
+        }
+      }
+    },
+    "hello:world": {
+      "id": "hello:world",
+      "description": "Say hello world",
+      "strict": true,
+      "pluginName": "atlas",
+      "pluginAlias": "atlas",
+      "pluginType": "core",
+      "aliases": [],
+      "examples": [
+        "<%= config.bin %> <%= command.id %>\nhello world! (./src/commands/hello/world.ts)\n"
+      ],
+      "flags": {},
+      "args": {}
+    },
+    "search:search": {
+      "id": "search:search",
+      "description": "Search for a Terraform template within a specific repo and organization",
+      "strict": true,
+      "pluginName": "atlas",
+      "pluginAlias": "atlas",
+      "pluginType": "core",
+      "aliases": [],
+      "flags": {
+        "version": {
+          "name": "version",
+          "type": "option",
+          "char": "v",
+          "description": "version of the template",
+          "multiple": false
+        },
+        "service": {
+          "name": "service",
+          "type": "option",
+          "char": "s",
+          "description": "AWS service for the template",
+          "multiple": false
+        }
+      },
+      "args": {}
+    }
+  }
+}

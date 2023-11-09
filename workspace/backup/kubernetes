@@ -1,0 +1,11 @@
+kubectl -n ci-cd rollout restart $NOME
+- Equivalente a deletar so que mais polite
+kubectl delete -n sonarqube persistentvolumeclaim/data-sonarqube-mysql-0
+kubectl delete -n sonarqube persistentvolumeclaim/data-sonarqube-postgresql-0
+kubectl delete -n sonarqube persistentvolumeclaim/data-sonarqubesonarsource-mysql-0 
+kubectl delete -n sonarqube persistentvolumeclaim/data-sonarqubesonarsource-postgresql-0
+
+kubectl delete -n sonarqube persistentvolume/pvc-bbba3a4a-62a8-4a51-a35c-21b48816cfa
+kubectl delete -n sonarqube persistentvolume/pvc-e12f48bf-7156-417d-8988-23acbd8c623a
+kubectl delete -n sonarqube persistentvolume/pvc-4e9711b0-b68b-40a0-9846-f8045199236b
+kubectl delete -n sonarqube persistentvolume/pvc-31c65637-6586-4186-a226-3e86340d300c

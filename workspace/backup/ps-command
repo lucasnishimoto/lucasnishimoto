@@ -1,0 +1,37 @@
+Somar número de Threads por  
+
+ps axo nlwp,pid,cmd |awk '{ nlwp += $1 } END { print nlwp }'
+
+
+
+Listar os processos com maior número de Threads (50) por  
+
+ps axo nlwp,pid,cmd | sort -rn | head -50
+
+
+
+Listar todos para um arquivo por  
+
+ps -elLf > alemar.txt
+
+
+
+Listar os processos com maior uso de CPU (50)
+
+ps axo pcpu,nlwp,pid,cmd | sort -rn | head -50
+
+Listar os processos com maior uso de CPU
+
+ps -o pid,user,pcpu,command ax | sort -b -k3 -r
+
+Listar os processos com maior uso de Memória em Mb (5 maiores)
+
+ps -eo size,pid,user,command --sort -size |awk '{ hr=$1/1024 ; printf("%13.2f Mb ",hr) } { for ( x=4 ; x<=NF ; x++ ) { printf("%s ",$x) } print "" }' |cut -d "" -f2 | cut -d "-" -f1 |head -5
+
+Listar os processos com maior usi de Memória (50)
+
+ps axo %mem,nlwp,pid,cmd | sort -rn | head -50
+
+Listar os processos com maior uso de Memória
+
+ps -o pid,user,%mem,command ax | sort -b -k3 -r

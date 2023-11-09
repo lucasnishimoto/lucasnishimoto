@@ -1,0 +1,11 @@
+Sed para busca e troca de dados em um arquivo.
+
+sed 's/com.mysql.cj.jdbc.Driver/com.mysql.jdbc.Driver/g' domain.xml
+
+Em caso de sucesso e para efetivar a mudança adicionar o paramentro -i:
+
+sed 's/com.mysql.cj.jdbc.Driver/com.mysql.jdbc.Driver/g' domain.xml
+
+Sed para busca em um determinado horário (o horário faz parte do arquivo no exemplo.)
+
+sed -n '/2021-10-13 12:11/ , /2021-10-13 12:15/p' umdf-info.log

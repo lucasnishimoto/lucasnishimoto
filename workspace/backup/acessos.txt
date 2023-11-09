@@ -1,0 +1,41 @@
+E-mail
+Login: lucas.nishimoto@remessaonline.com.br 
+Senha: maker@Remess4
+
+FortiClient VPN
+Login: lucas.nishimoto
+Senha: gmx7DKA!twd7tmr7thw
+
+AWS
+Login: lucas.nishimoto
+Senha: gmx7DKA!twd7tmr7thw
+
+
+mudar hostname da maquina Lucas_Nishimoto
+entrar no slack de SRE 
+Pedir o antivirus - instalador ubuntu 
+
+
+
+
+logs - aws > 5 maior custo 
+
+dores :
+
+Custos AWS 
+CI/CD
+
+
+Apreender:
+
+Terraform 
+New Relic 
+AWS (EKS)
+
+Plano de estudo:
+
+Git  - base infra, runbooks 
+AWS 
+Jenkins 
+
+
